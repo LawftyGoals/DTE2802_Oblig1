@@ -1,0 +1,74 @@
+﻿@model BlogDetailsViewModel
+@using ObligEnBlog.Models.Entities
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Blog</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Blog.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Blog.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Blog.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Blog.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Blog.DateCreated)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Blog.DateCreated)
+        </dd>
+    </dl>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BlogPosts.ElementAt(0).Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlogPosts.ElementAt(0).Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BlogPosts.ElementAt(0).Content)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.BlogPosts)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BlogPostId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.BlogPostId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.BlogPostId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Blog.BlogId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
