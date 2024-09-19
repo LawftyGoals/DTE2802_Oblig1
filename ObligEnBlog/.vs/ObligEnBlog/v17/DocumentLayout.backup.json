@@ -3,16 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\controllers\\blogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\controllers\\blogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ObligEnBlog.Data/True/SqlTable/dbo.BlogPost.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ObligEnBlog.Data/True/SqlTable/dbo.Blog.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\controllers\\blogpostscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\controllers\\blogpostscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\data\\obligenblogcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\data\\obligenblogcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\views\\blogs\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\views\\blogs\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\controllers\\blogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\controllers\\blogscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\views\\blogposts\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\views\\blogposts\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\models\\entities\\blog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,46 +41,12 @@
       "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\models\\entities\\blogpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\views\\blogposts\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\views\\blogposts\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\models\\viewmodels\\blogdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\models\\viewmodels\\blogdetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ObligEnBlog.Data/True/SqlTable/dbo.BlogPost.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ObligEnBlog.Data/True/SqlTable/dbo.Blog.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\data\\obligenblogcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\data\\obligenblogcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\views\\blogposts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\views\\blogposts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\migrations\\20240917072813_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\migrations\\20240917072813_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\migrations\\20240917104108_addblogposts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\migrations\\20240917104108_addblogposts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\migrations\\20240917200517_newpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\migrations\\20240917200517_newpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\obligenblog.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -79,10 +63,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|c:\\users\\xg47\\documents\\utdanning\\dte2802\\dte2802_oblig1\\obligenblog\\obligenblog\\migrations\\20240918192853_reworkblogposts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01D7A397-C7ED-4727-A20F-33F972539E7C}|ObligEnBlog\\ObligEnBlog.csproj|solutionrelative:obligenblog\\migrations\\20240918192853_reworkblogposts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -92,82 +72,94 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "dbo.BlogPost.sql",
+              "DocumentIndex": 1,
+              "Title": "dbo.BlogPost [Data]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ObligEnBlog.Data/True/SqlTable/dbo.BlogPost.sql",
-              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ObligEnBlog.Data/True/SqlTable/dbo.BlogPost.sql",
+              "ToolTip": "dbo.BlogPost [Data]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-09-18T19:30:35.609Z"
+              "WhenOpened": "2024-09-19T12:53:17.73Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "20240918192853_ReworkBlogPosts.cs",
-              "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Migrations\\20240918192853_ReworkBlogPosts.cs",
-              "RelativeDocumentMoniker": "ObligEnBlog\\Migrations\\20240918192853_ReworkBlogPosts.cs",
-              "ToolTip": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Migrations\\20240918192853_ReworkBlogPosts.cs",
-              "RelativeToolTip": "ObligEnBlog\\Migrations\\20240918192853_ReworkBlogPosts.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAqAAAA",
+              "DocumentIndex": 2,
+              "Title": "dbo.Blog [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ObligEnBlog.Data/True/SqlTable/dbo.Blog.sql",
+              "ToolTip": "dbo.Blog [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-09-19T12:53:08.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ObligEnBlogContext.cs",
+              "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Data\\ObligEnBlogContext.cs",
+              "RelativeDocumentMoniker": "ObligEnBlog\\Data\\ObligEnBlogContext.cs",
+              "ToolTip": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Data\\ObligEnBlogContext.cs",
+              "RelativeToolTip": "ObligEnBlog\\Data\\ObligEnBlogContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T19:28:53.718Z"
+              "WhenOpened": "2024-09-19T09:55:40.82Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "SeedData.cs",
               "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Models\\SeedData.cs",
               "RelativeDocumentMoniker": "ObligEnBlog\\Models\\SeedData.cs",
               "ToolTip": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Models\\SeedData.cs",
               "RelativeToolTip": "ObligEnBlog\\Models\\SeedData.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwBMAAABrAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T07:38:28.404Z"
+              "WhenOpened": "2024-09-17T07:38:28.404Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "BlogsController.cs",
               "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Controllers\\BlogsController.cs",
               "RelativeDocumentMoniker": "ObligEnBlog\\Controllers\\BlogsController.cs",
               "ToolTip": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Controllers\\BlogsController.cs",
               "RelativeToolTip": "ObligEnBlog\\Controllers\\BlogsController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwCEAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-17T07:27:53.175Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Views\\BlogPosts\\Details.cshtml",
               "RelativeDocumentMoniker": "ObligEnBlog\\Views\\BlogPosts\\Details.cshtml",
               "ToolTip": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Views\\BlogPosts\\Details.cshtml",
               "RelativeToolTip": "ObligEnBlog\\Views\\BlogPosts\\Details.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACIAAABVAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-17T11:29:08.511Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Views\\Blogs\\Details.cshtml",
               "RelativeDocumentMoniker": "ObligEnBlog\\Views\\Blogs\\Details.cshtml",
               "ToolTip": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Views\\Blogs\\Details.cshtml",
               "RelativeToolTip": "ObligEnBlog\\Views\\Blogs\\Details.cshtml",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEAAAABxAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEoAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-17T12:00:31.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-17T12:00:31.358Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Blog.cs",
               "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Models\\Entities\\Blog.cs",
               "RelativeDocumentMoniker": "ObligEnBlog\\Models\\Entities\\Blog.cs",
@@ -175,12 +167,11 @@
               "RelativeToolTip": "ObligEnBlog\\Models\\Entities\\Blog.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T07:19:08.24Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-17T07:19:08.24Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "BlogDetailsViewModel.cs",
               "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Models\\ViewModels\\BlogDetailsViewModel.cs",
               "RelativeDocumentMoniker": "ObligEnBlog\\Models\\ViewModels\\BlogDetailsViewModel.cs",
@@ -192,20 +183,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "BlogPostsController.cs",
               "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Controllers\\BlogPostsController.cs",
               "RelativeDocumentMoniker": "ObligEnBlog\\Controllers\\BlogPostsController.cs",
               "ToolTip": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Controllers\\BlogPostsController.cs",
               "RelativeToolTip": "ObligEnBlog\\Controllers\\BlogPostsController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAowDIAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwBYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-17T10:40:15.664Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "BlogPost.cs",
               "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Models\\Entities\\BlogPost.cs",
               "RelativeDocumentMoniker": "ObligEnBlog\\Models\\Entities\\BlogPost.cs",
@@ -214,51 +205,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-17T09:28:32.673Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "dbo.Blog.sql",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ObligEnBlog.Data/True/SqlTable/dbo.Blog.sql",
-              "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/ObligEnBlog.Data/True/SqlTable/dbo.Blog.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-09-17T20:26:47.644Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ObligEnBlogContext.cs",
-              "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Data\\ObligEnBlogContext.cs",
-              "RelativeDocumentMoniker": "ObligEnBlog\\Data\\ObligEnBlogContext.cs",
-              "ToolTip": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Data\\ObligEnBlogContext.cs",
-              "RelativeToolTip": "ObligEnBlog\\Data\\ObligEnBlogContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T07:29:57.019Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "20240917072813_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Migrations\\20240917072813_InitialCreate.cs",
-              "RelativeDocumentMoniker": "ObligEnBlog\\Migrations\\20240917072813_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Migrations\\20240917072813_InitialCreate.cs",
-              "RelativeToolTip": "ObligEnBlog\\Migrations\\20240917072813_InitialCreate.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T07:28:13.973Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Program.cs",
-              "RelativeDocumentMoniker": "ObligEnBlog\\Program.cs",
-              "ToolTip": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Program.cs",
-              "RelativeToolTip": "ObligEnBlog\\Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T07:30:23.056Z"
             },
             {
               "$type": "Document",
@@ -274,31 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "20240917104108_AddBlogPosts.cs",
-              "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Migrations\\20240917104108_AddBlogPosts.cs",
-              "RelativeDocumentMoniker": "ObligEnBlog\\Migrations\\20240917104108_AddBlogPosts.cs",
-              "ToolTip": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Migrations\\20240917104108_AddBlogPosts.cs",
-              "RelativeToolTip": "ObligEnBlog\\Migrations\\20240917104108_AddBlogPosts.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T10:41:08.735Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "20240917200517_NewPC.cs",
-              "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Migrations\\20240917200517_NewPC.cs",
-              "RelativeDocumentMoniker": "ObligEnBlog\\Migrations\\20240917200517_NewPC.cs",
-              "ToolTip": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Migrations\\20240917200517_NewPC.cs",
-              "RelativeToolTip": "ObligEnBlog\\Migrations\\20240917200517_NewPC.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T20:05:17.298Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 12,
               "Title": "ObligEnBlog.csproj",
               "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\ObligEnBlog.csproj",
               "RelativeDocumentMoniker": "ObligEnBlog\\ObligEnBlog.csproj",
@@ -310,7 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 14,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Views\\Blogs\\Index.cshtml",
               "RelativeDocumentMoniker": "ObligEnBlog\\Views\\Blogs\\Index.cshtml",
@@ -322,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 13,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "ObligEnBlog\\Views\\_ViewImports.cshtml",
@@ -334,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 15,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\xg47\\Documents\\Utdanning\\DTE2802\\DTE2802_Oblig1\\ObligEnBlog\\ObligEnBlog\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "ObligEnBlog\\Views\\Shared\\_Layout.cshtml",

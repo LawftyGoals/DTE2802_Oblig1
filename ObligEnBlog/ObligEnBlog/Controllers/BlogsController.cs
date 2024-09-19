@@ -14,9 +14,11 @@ namespace ObligEnBlog {
 
         // GET: Blogs
         public async Task<IActionResult> Index() {
-            return _context.Blog != null ?
-                        View(await _context.Blog.ToListAsync()) :
-                        Problem("Entity set 'ObligEnBlogContext.Blog'  is null.");
+            var blogs = await _context.Blog.ToListAsync();
+
+            return View(blogs);
+
+
         }
 
         // GET: Blogs/Details/5

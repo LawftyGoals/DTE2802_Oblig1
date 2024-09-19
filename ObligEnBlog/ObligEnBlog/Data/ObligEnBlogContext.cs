@@ -7,11 +7,8 @@ namespace ObligEnBlog.Data {
             : base(options) {
         }
 
-        public DbSet<Blog> Blog { get; set; } = default!;
-
-
-
-        public DbSet<BlogPost>? BlogPost { get; set; }
+        public DbSet<Blog> Blog { get; set; }
+        public DbSet<BlogPost> BlogPost { get; set; }
 
     }
 }
