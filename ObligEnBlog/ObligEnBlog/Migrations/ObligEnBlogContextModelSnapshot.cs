@@ -54,7 +54,10 @@ namespace ObligEnBlog.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BlogPostId"), 1L, 1);
 
-                    b.Property<int>("BlogParentBlogId")
+                    b.Property<int?>("BlogId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BlogParentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Content")
@@ -71,20 +74,16 @@ namespace ObligEnBlog.Migrations
 
                     b.HasKey("BlogPostId");
 
-                    b.HasIndex("BlogParentBlogId");
+                    b.HasIndex("BlogId");
 
                     b.ToTable("BlogPost");
                 });
 
             modelBuilder.Entity("ObligEnBlog.Models.Entities.BlogPost", b =>
                 {
-                    b.HasOne("ObligEnBlog.Models.Entities.Blog", "BlogParent")
+                    b.HasOne("ObligEnBlog.Models.Entities.Blog", null)
                         .WithMany("Posts")
-                        .HasForeignKey("BlogParentBlogId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BlogParent");
+                        .HasForeignKey("BlogId");
                 });
 
             modelBuilder.Entity("ObligEnBlog.Models.Entities.Blog", b =>

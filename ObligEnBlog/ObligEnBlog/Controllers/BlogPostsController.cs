@@ -1,44 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ObligEnBlog.Data;
 using ObligEnBlog.Models.Entities;
 
-namespace ObligEnBlog.Controllers
-{
-    public class BlogPostsController : Controller
-    {
+namespace ObligEnBlog.Controllers {
+    public class BlogPostsController : Controller {
         private readonly ObligEnBlogContext _context;
 
-        public BlogPostsController(ObligEnBlogContext context)
-        {
+        public BlogPostsController(ObligEnBlogContext context) {
             _context = context;
         }
 
         // GET: BlogPosts
-        public async Task<IActionResult> Index()
-        {
+        public async Task<IActionResult> Index() {
             return _context.BlogPost != null ?
                         View(await _context.BlogPost.ToListAsync()) :
                         Problem("Entity set 'ObligEnBlogContext.BlogPost'  is null.");
         }
 
         // GET: BlogPosts/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null || _context.BlogPost == null)
-            {
+        public async Task<IActionResult> Details(int? id) {
+
+            if (id == null || _context.BlogPost == null) {
                 return NotFound();
             }
 
             var blogPost = await _context.BlogPost
                 .FirstOrDefaultAsync(m => m.BlogPostId == id);
-            if (blogPost == null)
-            {
+            if (blogPost == null) {
                 return NotFound();
             }
 
@@ -46,8 +35,7 @@ namespace ObligEnBlog.Controllers
         }
 
         // GET: BlogPosts/Create
-        public IActionResult Create()
-        {
+        public IActionResult Create() {
             return View();
         }
 
@@ -56,10 +44,8 @@ namespace ObligEnBlog.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BlogPostId,Title,Description,Content")] BlogPost blogPost)
-        {
-            if (ModelState.IsValid)
-            {
+        public async Task<IActionResult> Create([Bind("BlogPostId,BlogParentId,Title,Description,Content")] BlogPost blogPost) {
+            if (ModelState.IsValid) {
                 _context.Add(blogPost);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -68,16 +54,13 @@ namespace ObligEnBlog.Controllers
         }
 
         // GET: BlogPosts/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null || _context.BlogPost == null)
-            {
+        public async Task<IActionResult> Edit(int? id) {
+            if (id == null || _context.BlogPost == null) {
                 return NotFound();
             }
 
             var blogPost = await _context.BlogPost.FindAsync(id);
-            if (blogPost == null)
-            {
+            if (blogPost == null) {
                 return NotFound();
             }
             return View(blogPost);
@@ -88,28 +71,21 @@ namespace ObligEnBlog.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BlogPostId,Title,Description,Content")] BlogPost blogPost)
-        {
-            if (id != blogPost.BlogPostId)
-            {
+        public async Task<IActionResult> Edit(int id, [Bind("BlogPostId,Title,Description,Content")] BlogPost blogPost) {
+            if (id != blogPost.BlogPostId) {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
+            if (ModelState.IsValid) {
+                try {
                     _context.Update(blogPost);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BlogPostExists(blogPost.BlogPostId))
-                    {
+                catch (DbUpdateConcurrencyException) {
+                    if (!BlogPostExists(blogPost.BlogPostId)) {
                         return NotFound();
                     }
-                    else
-                    {
+                    else {
                         throw;
                     }
                 }
@@ -119,17 +95,14 @@ namespace ObligEnBlog.Controllers
         }
 
         // GET: BlogPosts/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.BlogPost == null)
-            {
+        public async Task<IActionResult> Delete(int? id) {
+            if (id == null || _context.BlogPost == null) {
                 return NotFound();
             }
 
             var blogPost = await _context.BlogPost
                 .FirstOrDefaultAsync(m => m.BlogPostId == id);
-            if (blogPost == null)
-            {
+            if (blogPost == null) {
                 return NotFound();
             }
 
@@ -139,15 +112,12 @@ namespace ObligEnBlog.Controllers
         // POST: BlogPosts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.BlogPost == null)
-            {
+        public async Task<IActionResult> DeleteConfirmed(int id) {
+            if (_context.BlogPost == null) {
                 return Problem("Entity set 'ObligEnBlogContext.BlogPost'  is null.");
             }
             var blogPost = await _context.BlogPost.FindAsync(id);
-            if (blogPost != null)
-            {
+            if (blogPost != null) {
                 _context.BlogPost.Remove(blogPost);
             }
 
@@ -155,8 +125,7 @@ namespace ObligEnBlog.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool BlogPostExists(int id)
-        {
+        private bool BlogPostExists(int id) {
             return (_context.BlogPost?.Any(e => e.BlogPostId == id)).GetValueOrDefault();
         }
     }

@@ -8,8 +8,8 @@ namespace ObligEnBlog.Models {
 
             using (var context = new ObligEnBlogContext(serviceProvider.GetRequiredService<DbContextOptions<ObligEnBlogContext>>())) {
 
-                //context.Blog.RemoveRange(await context.Blog.ToArrayAsync());
-                //context.BlogPost.RemoveRange(await context.BlogPost.ToArrayAsync());
+                context.Blog.RemoveRange(context.Blog.ToArray());
+                context.BlogPost.RemoveRange(context.BlogPost.ToArray());
 
 
                 if (context.Blog.Any() && context.BlogPost.Any()) {
@@ -25,7 +25,7 @@ namespace ObligEnBlog.Models {
                 Console.WriteLine("***************************** *************** ****************************");
 
                 if (!context.BlogPost.Any()) {
-                    context.BlogPost.AddRange(new BlogPost { BlogParent = blogList[0], Title = "What does best mean?", Content = "Simply the best", Description = "a short blog about what the best means" }, new BlogPost { BlogParent = blogList[1], Title = "Awesome. Yes?", Content = "Are questions awesome or not? We the awesome blog say yes.", Description = "a short blog about what the best means" });
+                    context.BlogPost.AddRange(new BlogPost { BlogParentId = 1, Title = "What does best mean?", Content = "Simply the best", Description = "a short blog about what the best means" }, new BlogPost { BlogParentId = 0, Title = "Awesome. Yes?", Content = "Are questions awesome or not? We the awesome blog say yes.", Description = "a short blog about what the best means" });
                 }
                 context.SaveChanges();
 

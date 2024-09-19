@@ -21,6 +21,8 @@ namespace ObligEnBlog {
 
         // GET: Blogs/Details/5
         public async Task<IActionResult> Details(int? id) {
+            Console.WriteLine("#############################################################################");
+            Console.WriteLine(id);
             if (id == null || _context.Blog == null) {
                 return NotFound();
             }
@@ -28,7 +30,7 @@ namespace ObligEnBlog {
             var blog = await _context.Blog
                 .FirstOrDefaultAsync(m => m.BlogId == id);
 
-            var blogPosts = await _context.BlogPost.Where(m => m.BlogParent.BlogId == blog.BlogId).ToListAsync();
+            var blogPosts = await _context.BlogPost.Where(m => m.BlogParentId == blog.BlogId).ToListAsync();
             if (blog == null) {
                 return NotFound();
             }
