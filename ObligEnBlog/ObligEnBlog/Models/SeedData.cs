@@ -8,26 +8,22 @@ namespace ObligEnBlog.Models {
 
             using (var context = new ObligEnBlogContext(serviceProvider.GetRequiredService<DbContextOptions<ObligEnBlogContext>>())) {
 
-                context.Blog.RemoveRange(context.Blog.ToArray());
-                context.BlogPost.RemoveRange(context.BlogPost.ToArray());
-
-
                 if (context.Blog.Any() && context.BlogPost.Any()) {
-                    Console.WriteLine("Hello******************************* *************************");
                     return;
                 }
+                //context.Blog.RemoveRange(context.Blog.ToArray());
+                //context.BlogPost.RemoveRange(context.BlogPost.ToArray());
 
                 var blogList = new Blog[] { new Blog { Name = "Best blog", Description = "the best blog created. period." }, new Blog { Name = "awesome blog", Description = "for all things awesome." }, new Blog { Name = "just a blog", Description = "we deal in mediocraty" } };
-                Console.WriteLine(context.Blog);
 
-                if (!context.Blog.Any()) { context.Blog.AddRange(blogList); Console.WriteLine("seeded Post"); }
 
-                Console.WriteLine("***************************** *************** ****************************");
+                if (!context.Blog.Any()) { await context.Blog.AddRangeAsync(blogList); Console.WriteLine("seeded Blog"); }
 
                 if (!context.BlogPost.Any()) {
-                    context.BlogPost.AddRange(new BlogPost { BlogParentId = 1, Title = "What does best mean?", Content = "Simply the best", Description = "a short blog about what the best means" }, new BlogPost { BlogParentId = 0, Title = "Awesome. Yes?", Content = "Are questions awesome or not? We the awesome blog say yes.", Description = "a short blog about what the best means" });
+                    await context.BlogPost.AddRangeAsync(new BlogPost { BlogParentId = 1, Title = "What does best mean?", Content = "Simply the best", Description = "a short blog about what the best means" }, new BlogPost { BlogParentId = 0, Title = "Awesome. Yes?", Content = "Are questions awesome or not? We the awesome blog say yes.", Description = "a short blog about what the best means" });
+                    Console.WriteLine("seeded BlogPost");
                 }
-                context.SaveChanges();
+                await context.SaveChangesAsync();
 
             }
         }

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using ObligEnBlog.Data;
 using ObligEnBlog.Models.Entities;
+using System.Text.Encodings.Web;
 
 namespace ObligEnBlog.Controllers {
     public class BlogPostsController : Controller {
@@ -44,11 +45,12 @@ namespace ObligEnBlog.Controllers {
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BlogPostId,BlogParentId,Title,Description,Content")] BlogPost blogPost) {
+        public async Task<IActionResult> Create(BlogPost blogPost) {
+            var parentBlog = await _context.Blog.FirstOrDefaultAsync(m => m.BlogId == blogPost.BlogParentId);
             if (ModelState.IsValid) {
                 _context.Add(blogPost);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Details), "Blogs", new { id = parentBlog.BlogId});
             }
             return View(blogPost);
         }

@@ -72,6 +72,7 @@
 }
 <form asp-controller="BlogPosts" asp-action="Create">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="BlogPost.BlogParentId" value="@Model.Blog.BlogId" />
     <div class="form-group">
         <label asp-for="BlogPost.Title" class="control-label"></label>
         <input asp-for="BlogPost.Title" class="form-control" />

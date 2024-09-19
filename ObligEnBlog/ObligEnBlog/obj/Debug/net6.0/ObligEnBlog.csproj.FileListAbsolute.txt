@@ -549,3 +549,4 @@ C:\Users\mymsn\Documents\UIT\DTE2802\DTE2802_Oblig1\ObligEnBlog\ObligEnBlog\obj\
 C:\Users\mymsn\Documents\UIT\DTE2802\DTE2802_Oblig1\ObligEnBlog\ObligEnBlog\obj\Debug\net6.0\ObligEnBlog.pdb
 C:\Users\mymsn\Documents\UIT\DTE2802\DTE2802_Oblig1\ObligEnBlog\ObligEnBlog\obj\Debug\net6.0\ObligEnBlog.genruntimeconfig.cache
 C:\Users\mymsn\Documents\UIT\DTE2802\DTE2802_Oblig1\ObligEnBlog\ObligEnBlog\obj\Debug\net6.0\ref\ObligEnBlog.dll
+C:\Users\xg47\Documents\Utdanning\DTE2802\DTE2802_Oblig1\ObligEnBlog\ObligEnBlog\obj\Debug\net6.0\ObligEnBlog.sourcelink.json
