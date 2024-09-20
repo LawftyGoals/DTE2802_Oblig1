@@ -79,6 +79,26 @@ namespace ObligEnBlog.Migrations
                     b.ToTable("BlogPost");
                 });
 
+            modelBuilder.Entity("ObligEnBlog.Models.Entities.Comment", b =>
+                {
+                    b.Property<int>("CommentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommentId"), 1L, 1);
+
+                    b.Property<int>("BlogPostParentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CommentText")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CommentId");
+
+                    b.ToTable("Comment");
+                });
+
             modelBuilder.Entity("ObligEnBlog.Models.Entities.BlogPost", b =>
                 {
                     b.HasOne("ObligEnBlog.Models.Entities.Blog", null)

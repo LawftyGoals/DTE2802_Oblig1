@@ -11,7 +11,11 @@ namespace ObligEnBlog.Data {
 
 
 
-        public DbSet<BlogPost>? BlogPost { get; set; }
+        public DbSet<BlogPost> BlogPost { get; set; }
+
+
+
+        public DbSet<Comment> Comment { get; set; }
 
     }
 }
