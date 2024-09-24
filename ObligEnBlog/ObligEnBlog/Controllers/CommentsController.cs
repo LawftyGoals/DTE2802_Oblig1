@@ -58,11 +58,12 @@ namespace ObligEnBlog.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CommentId,BlogPostParentId,CommentText")] Comment comment)
         {
+            var parentBlogPost = await _context.BlogPost.FirstAsync(m => m.BlogPostId == comment.BlogPostParentId);
             if (ModelState.IsValid)
             {
                 _context.Add(comment);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Details), "BlogPosts", new {id = parentBlogPost.BlogPostId});
             }
             return View(comment);
         }
@@ -152,7 +153,14 @@ namespace ObligEnBlog.Controllers
             }
             
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+            if(comment != null)
+            { return RedirectToAction(nameof(Details), "BlogPosts", new { id = comment.BlogPostParentId}); }
+
+            return RedirectToAction(nameof(Details), "Blogs");
+
+
+
         }
 
         private bool CommentExists(int id)

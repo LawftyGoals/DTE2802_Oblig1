@@ -6,6 +6,5 @@ namespace ObligEnBlog.Models.ViewModels {
         public BlogPost BlogPost { get; set; }
         public Blog Blog { get; set; }
 
-
     }
 }

@@ -14,5 +14,7 @@ namespace ObligEnBlog.Models.Entities
 
         public IEnumerable<BlogPost> Posts { get; set; }
 
+        public bool Active { get; set; } = true;
+
     }
 }

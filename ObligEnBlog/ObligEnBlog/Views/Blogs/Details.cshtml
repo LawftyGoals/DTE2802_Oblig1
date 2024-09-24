@@ -29,6 +29,21 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Blog.DateCreated)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Blog.Active)
+        </dt>
+        @if (Model.Blog.Active)
+        {
+            <dd class="col-sm-10">
+                Blog is Active
+            </dd>
+        }
+        else
+        {
+            <dd class="col-sm-10">
+                Blog is inactive
+            </dd>
+        }
     </dl>
 </div>
 <form asp-controller="BlogPosts" asp-action="Create">
@@ -53,25 +68,27 @@
         <input type="submit" value="Create" class="btn btn-primary" />
     </div>
 </form>
-@if (Model.BlogPosts.Count() > 0) {
+@if (Model.BlogPosts.Count() > 0)
+{
 
     <table class="table">
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.BlogPosts.ElementAt(0).Title)
+                    @Html.DisplayNameFor(model => model.BlogPost.Title)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.BlogPosts.ElementAt(0).Description)
+                    @Html.DisplayNameFor(model => model.BlogPost.Description)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.BlogPosts.ElementAt(0).Content)
+                    @Html.DisplayNameFor(model => model.BlogPost.Content)
                 </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.BlogPosts) {
+            @foreach (var item in Model.BlogPosts)
+            {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Title)
@@ -91,6 +108,12 @@
             }
         </tbody>
     </table>
+}
+else
+{
+    <div>
+        <h3>No Blogposts found.</h3>
+    </div>
 }
 
 <div>
