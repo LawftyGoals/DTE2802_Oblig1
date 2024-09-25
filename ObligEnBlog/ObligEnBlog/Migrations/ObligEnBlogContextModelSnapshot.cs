@@ -57,9 +57,6 @@ namespace ObligEnBlog.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BlogPostId"), 1L, 1);
 
-                    b.Property<int?>("BlogId")
-                        .HasColumnType("int");
-
                     b.Property<int>("BlogParentId")
                         .HasColumnType("int");
 
@@ -79,8 +76,6 @@ namespace ObligEnBlog.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BlogPostId");
-
-                    b.HasIndex("BlogId");
 
                     b.ToTable("BlogPost");
                 });
@@ -106,18 +101,6 @@ namespace ObligEnBlog.Migrations
                     b.HasKey("CommentId");
 
                     b.ToTable("Comment");
-                });
-
-            modelBuilder.Entity("ObligEnBlog.Models.Entities.BlogPost", b =>
-                {
-                    b.HasOne("ObligEnBlog.Models.Entities.Blog", null)
-                        .WithMany("Posts")
-                        .HasForeignKey("BlogId");
-                });
-
-            modelBuilder.Entity("ObligEnBlog.Models.Entities.Blog", b =>
-                {
-                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }

@@ -46,6 +46,7 @@
         }
     </dl>
 </div>
+@if(@Model.Blog.Active){
 <form asp-controller="BlogPosts" asp-action="Create">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <input type="hidden" asp-for="BlogPost.BlogParentId" value="@Model.Blog.BlogId" />
@@ -67,7 +68,9 @@
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-primary" />
     </div>
-</form>
+</form>} else {
+    <div>The blog is deactivated</div>
+}
 @if (Model.BlogPosts.Count() > 0)
 {
 

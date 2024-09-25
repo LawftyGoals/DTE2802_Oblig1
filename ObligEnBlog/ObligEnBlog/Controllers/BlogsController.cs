@@ -4,31 +4,25 @@ using ObligEnBlog.Data;
 using ObligEnBlog.Models.Entities;
 using ObligEnBlog.Models.ViewModels;
 
-namespace ObligEnBlog
-{
-    public class BlogsController : Controller
-    {
+namespace ObligEnBlog {
+    public class BlogsController : Controller {
         private readonly ObligEnBlogContext _context;
 
-        public BlogsController(ObligEnBlogContext context)
-        {
+        public BlogsController(ObligEnBlogContext context) {
             _context = context;
         }
 
         // GET: Blogs
-        public async Task<IActionResult> Index()
-        {
+        public async Task<IActionResult> Index() {
             return _context.Blog != null ?
                         View(await _context.Blog.ToListAsync()) :
                         Problem("Entity set 'ObligEnBlogContext.Blog'  is null.");
         }
 
         // GET: Blogs/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
+        public async Task<IActionResult> Details(int? id) {
 
-            if (id == null || _context.Blog == null)
-            {
+            if (id == null || _context.Blog == null) {
                 return NotFound();
             }
 
@@ -36,8 +30,7 @@ namespace ObligEnBlog
                 .FirstAsync(m => m.BlogId == id);
 
             var blogPosts = await _context.BlogPost.Where(m => m.BlogParentId == blog.BlogId).ToListAsync();
-            if (blog == null)
-            {
+            if (blog == null) {
                 return NotFound();
             }
             var myView = new BlogDetailsViewModel { Blog = blog, BlogPosts = blogPosts };
@@ -46,8 +39,7 @@ namespace ObligEnBlog
         }
 
         // GET: Blogs/Create
-        public IActionResult Create()
-        {
+        public IActionResult Create() {
             return View();
         }
 
@@ -56,10 +48,8 @@ namespace ObligEnBlog
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BlogId,Name,Description,DateCreated")] Blog blog)
-        {
-            if (ModelState.IsValid)
-            {
+        public async Task<IActionResult> Create([Bind("BlogId,Name,Description,DateCreated")] Blog blog) {
+            if (ModelState.IsValid) {
                 _context.Add(blog);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -68,16 +58,13 @@ namespace ObligEnBlog
         }
 
         // GET: Blogs/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null || _context.Blog == null)
-            {
+        public async Task<IActionResult> Edit(int? id) {
+            if (id == null || _context.Blog == null) {
                 return NotFound();
             }
 
             var blog = await _context.Blog.FindAsync(id);
-            if (blog == null)
-            {
+            if (blog == null) {
                 return NotFound();
             }
             return View(blog);
@@ -88,28 +75,25 @@ namespace ObligEnBlog
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BlogId,Name,Description,DateCreated")] Blog blog)
-        {
-            if (id != blog.BlogId)
-            {
+        public async Task<IActionResult> Edit(int id, [Bind("BlogId,Name,Description,DateCreated,Active")] Blog blog) {
+            if (id != blog.BlogId) {
                 return NotFound();
             }
+            Console.WriteLine(ModelState.IsValid);
+            Console.WriteLine(blog.ToString());
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
+            if (ModelState.IsValid) {
+                try {
                     _context.Update(blog);
+                    var test = await _context.Blog.FindAsync(id);
+                    Console.WriteLine(test.Active);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BlogExists(blog.BlogId))
-                    {
+                catch (DbUpdateConcurrencyException) {
+                    if (!BlogExists(blog.BlogId)) {
                         return NotFound();
                     }
-                    else
-                    {
+                    else {
                         throw;
                     }
                 }
@@ -119,17 +103,14 @@ namespace ObligEnBlog
         }
 
         // GET: Blogs/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.Blog == null)
-            {
+        public async Task<IActionResult> Delete(int? id) {
+            if (id == null || _context.Blog == null) {
                 return NotFound();
             }
 
             var blog = await _context.Blog
                 .FirstOrDefaultAsync(m => m.BlogId == id);
-            if (blog == null)
-            {
+            if (blog == null) {
                 return NotFound();
             }
 
@@ -139,32 +120,26 @@ namespace ObligEnBlog
         // POST: Blogs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.Blog == null)
-            {
+        public async Task<IActionResult> DeleteConfirmed(int id) {
+            if (_context.Blog == null) {
                 return Problem("Entity set 'ObligEnBlogContext.Blog'  is null.");
             }
             var blog = await _context.Blog.FindAsync(id);
 
-            if (blog != null)
-            {
+            if (blog != null) {
                 var blogPosts = await _context.BlogPost.Where((bp) => bp.BlogParentId == blog.BlogId).ToListAsync();
                 var blogPostIds = blogPosts.Select(bp => bp.BlogPostId).ToList();
                 var comments = await _context.Comment.Where(c => blogPostIds.Contains(c.BlogPostParentId)).ToListAsync();
 
-                if (comments != null)
-                {
+                if (comments != null) {
                     _context.Comment.RemoveRange(comments);
                 }
 
-                if (blogPosts != null)
-                {
+                if (blogPosts != null) {
                     _context.BlogPost.RemoveRange(blogPosts);
                 }
 
-                if (blog != null)
-                {
+                if (blog != null) {
                     _context.Blog.Remove(blog);
                 }
             }
@@ -173,8 +148,7 @@ namespace ObligEnBlog
             return RedirectToAction(nameof(Index));
         }
 
-        private bool BlogExists(int id)
-        {
+        private bool BlogExists(int id) {
             return (_context.Blog?.Any(e => e.BlogId == id)).GetValueOrDefault();
         }
     }
