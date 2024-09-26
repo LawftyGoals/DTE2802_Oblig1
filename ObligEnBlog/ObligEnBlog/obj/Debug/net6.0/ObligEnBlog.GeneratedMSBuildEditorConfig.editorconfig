@@ -9,99 +9,99 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ObligEnBlog
 build_property.RootNamespace = ObligEnBlog
-build_property.ProjectDir = C:\Users\mymsn\Documents\UIT\DTE2802\DTE2802_Oblig1\ObligEnBlog\ObligEnBlog\
+build_property.ProjectDir = C:\Users\xg47\Documents\Utdanning\DTE2802\DTE2802_Oblig1\ObligEnBlog\ObligEnBlog\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\mymsn\Documents\UIT\DTE2802\DTE2802_Oblig1\ObligEnBlog\ObligEnBlog
+build_property.MSBuildProjectDirectory = C:\Users\xg47\Documents\Utdanning\DTE2802\DTE2802_Oblig1\ObligEnBlog\ObligEnBlog
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/BlogPosts/Create.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/BlogPosts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1Bvc3RzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/BlogPosts/Delete.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/BlogPosts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1Bvc3RzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/BlogPosts/Details.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/BlogPosts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1Bvc3RzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/BlogPosts/Edit.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/BlogPosts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1Bvc3RzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/BlogPosts/Index.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/BlogPosts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1Bvc3RzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Blogs/Create.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Blogs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Blogs/Delete.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Blogs/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Blogs/Details.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Blogs/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Blogs/Edit.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Blogs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Blogs/Index.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Blogs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Comments/Create.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Comments/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Comments/Delete.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Comments/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Comments/Details.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Comments/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Comments/Edit.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Comments/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Comments/Index.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Comments/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Home/Index.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Home/Privacy.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Shared/Error.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/_ViewImports.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/_ViewStart.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mymsn/Documents/UIT/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Shared/_Layout.cshtml]
+[C:/Users/xg47/Documents/Utdanning/DTE2802/DTE2802_Oblig1/ObligEnBlog/ObligEnBlog/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ihuaaem7rt

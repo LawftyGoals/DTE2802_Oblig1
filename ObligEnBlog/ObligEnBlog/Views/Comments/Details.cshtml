@@ -1,30 +1,35 @@
-﻿@model ObligEnBlog.Models.Entities.Comment
+﻿@model BlogPostDetailsViewModel
 
 @{
     ViewData["Title"] = "Details";
 }
 
 <h1>Details</h1>
-
+@if (!Model.Blog.Active)
+    {<h2>Blog has been disabled</h2>
+    }
 <div>
     <h4>Comment</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BlogPostParentId)
+            @Html.DisplayNameFor(model => model.Comment.BlogPostParentId)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BlogPostParentId)
+            @Html.DisplayFor(model => model.Comment.BlogPostParentId)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CommentText)
+            @Html.DisplayNameFor(model => model.Comment.CommentText)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CommentText)
+            @Html.DisplayFor(model => model.Comment.CommentText)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.CommentId">Edit</a> |
-    <a asp-controller="BlogPosts" asp-action="Details" asp-route-id="@Model?.BlogPostParentId">Back to blog post</a>
+    @if (Model.Blog.Active)
+    {
+        <span><a asp-action="Edit" asp-route-id="@Model?.Comment.CommentId">Edit</a> |</span>
+    }
+    <a asp-controller="BlogPosts" asp-action="Details" asp-route-id="@Model?.Comment.BlogPostParentId">Back to blog post</a>
 </div>

@@ -5,7 +5,10 @@
 }
 
 <h1>Details</h1>
-
+@if (!Model.Blog.Active)
+{
+    <h2>Blog has been disabled</h2>
+}
 <div>
     <h4>Blog Posts</h4>
     <hr />
@@ -31,7 +34,7 @@
     </dl>
 </div>
 
-
+@if(Model.Blog.Active){
 <h4>Comment</h4>
 <hr />
 <div class="row">
@@ -49,7 +52,8 @@
             </div>
         </form>
     </div>
-</div>
+    </div>
+}
 
 @if (Model.Comments.Count() > 0)
 {
@@ -69,12 +73,15 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.CommentText)
                     </td>
-
+                    @if (Model.Blog.Active)
+                    {
                     <td>
-                        <a asp-controller="Comments" asp-action="Edit" asp-route-id="@item.CommentId">Edit</a> |
-                        <a asp-controller="Comments" asp-action="Details" asp-route-id="@item.CommentId">Details</a> |
-                        <a asp-controller="Comments" asp-action="Delete" asp-route-id="@item.CommentId">Delete</a>
-                    </td>
+                        
+                            <a asp-controller="Comments" asp-action="Edit" asp-route-id="@item.CommentId">Edit</a> |
+                            < a asp - controller = "Comments" asp - action = "Details" asp - route - id = "@item.CommentId" > Details </ a > |
+                            < a asp - controller = "Comments" asp - action = "Delete" asp - route - id = "@item.CommentId" > Delete </ a >
+                        </td>
+                    }
                 </tr>
             }
         </tbody>
@@ -88,6 +95,5 @@ else
 }
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.BlogPost.BlogPostId">Edit</a> |
-    <a asp-controller="Blogs" asp-action="Details" asp-route-id="@Model?.BlogPost.BlogParentId">Back to List</a>
-
+    <a asp-controller="Blogs" asp-action="Details" asp-route-id="@Model?.BlogPost.BlogParentId">Back to Blog</a>
 </div>

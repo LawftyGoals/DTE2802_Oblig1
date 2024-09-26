@@ -43,13 +43,14 @@ namespace ObligEnBlog.Controllers
 
 
             var comments = await _context.Comment.Where(m => m.BlogPostParentId == id).ToListAsync();
+            var blog = await GetParentBlog(blogPost.BlogParentId);
 
             if (comments == null)
             {
                 return NotFound();
             }
 
-            var myView = new BlogPostDetailsViewModel { BlogPost = blogPost, Comments = comments };
+            var myView = new BlogPostDetailsViewModel { BlogPost = blogPost, Comments = comments, Blog = blog };
 
             return View(myView);
         }
@@ -181,5 +182,16 @@ namespace ObligEnBlog.Controllers
         {
             return (_context.BlogPost?.Any(e => e.BlogPostId == id)).GetValueOrDefault();
         }
+
+        private async Task<Blog> GetParentBlog(int id)
+        {
+            var blog = await _context.Blog.FindAsync(id);
+
+            return blog;
+        }
+
+
     }
+
+
 }

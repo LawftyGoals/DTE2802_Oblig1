@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ObligEnBlog.Data;
 using ObligEnBlog.Models.Entities;
+using ObligEnBlog.Models.ViewModels;
 
 namespace ObligEnBlog.Controllers
 {
@@ -41,6 +42,12 @@ namespace ObligEnBlog.Controllers
             {
                 return NotFound();
             }
+
+            var blogPostParent = await GetParentBlogPost(comment.BlogPostParentId);
+
+            var blogParent = await GetParentBlog(blogPostParent.BlogParentId);
+
+            var myView = new BlogPostDetailsViewModel() { Blog = blogParent, BlogPost = blogPostParent, Comment = comment };
 
             return View(comment);
         }
@@ -166,6 +173,20 @@ namespace ObligEnBlog.Controllers
         private bool CommentExists(int id)
         {
           return (_context.Comment?.Any(e => e.CommentId == id)).GetValueOrDefault();
+        }
+
+        private async Task<Blog> GetParentBlog(int id)
+        {
+            var blog = await _context.Blog.FindAsync(id);
+
+            return blog;
+        }
+
+        private async Task<BlogPost> GetParentBlogPost(int id)
+        {
+            var blogPost = await _context.BlogPost.FindAsync(id);
+
+            return blogPost;
         }
     }
 }

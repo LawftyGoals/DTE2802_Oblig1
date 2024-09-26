@@ -46,29 +46,33 @@
         }
     </dl>
 </div>
-@if(@Model.Blog.Active){
-<form asp-controller="BlogPosts" asp-action="Create">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <input type="hidden" asp-for="BlogPost.BlogParentId" value="@Model.Blog.BlogId" />
-    <div class="form-group">
-        <label asp-for="BlogPost.Title" class="control-label"></label>
-        <input asp-for="BlogPost.Title" class="form-control" />
-        <span asp-validation-for="BlogPost.Title" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="BlogPost.Description" class="control-label"></label>
-        <input asp-for="BlogPost.Description" class="form-control" />
-        <span asp-validation-for="BlogPost.Description" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="BlogPost.Content" class="control-label"></label>
-        <input asp-for="BlogPost.Content" class="form-control" />
-        <span asp-validation-for="BlogPost.Content" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-primary" />
-    </div>
-</form>} else {
+@if (@Model.Blog.Active)
+{
+    <form asp-controller="BlogPosts" asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="BlogPost.BlogParentId" value="@Model.Blog.BlogId" />
+        <div class="form-group">
+            <label asp-for="BlogPost.Title" class="control-label"></label>
+            <input asp-for="BlogPost.Title" class="form-control" />
+            <span asp-validation-for="BlogPost.Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BlogPost.Description" class="control-label"></label>
+            <input asp-for="BlogPost.Description" class="form-control" />
+            <span asp-validation-for="BlogPost.Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BlogPost.Content" class="control-label"></label>
+            <input asp-for="BlogPost.Content" class="form-control" />
+            <span asp-validation-for="BlogPost.Content" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+}
+else
+{
     <div>The blog is deactivated</div>
 }
 @if (Model.BlogPosts.Count() > 0)
@@ -103,9 +107,15 @@
                         @Html.DisplayFor(modelItem => item.Content)
                     </td>
                     <td>
-                        <a asp-controller="BlogPosts" asp-action="Edit" asp-route-id="@item.BlogPostId">Edit</a> |
-                        <a asp-controller="BlogPosts" asp-action="Details" asp-route-id="@item.BlogPostId">Details</a> |
-                        <a asp-controller="BlogPosts" asp-action="Delete" asp-route-id="@item.BlogPostId">Delete</a>
+                        @if (Model.Blog.Active)
+                        {
+                            <span><a asp-controller="BlogPosts" asp-action="Edit" asp-route-id="@item.BlogPostId">Edit</a> |</span>
+                        }
+                        <a asp-controller="BlogPosts" asp-action="Details" asp-route-id="@item.BlogPostId">Details</a>
+                        @if (Model.Blog.Active)
+                        {
+                            <span> | < a asp - controller = "BlogPosts" asp - action = "Delete" asp - route - id = "@item.BlogPostId" > Delete </ a ></span>
+                        }
                     </td>
                 </tr>
             }
