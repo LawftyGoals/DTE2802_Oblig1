@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace ObligEnBlog.Models.Entities {
-    public class Blog {
+    public class Blog : IOwnerEntity {
         public int BlogId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

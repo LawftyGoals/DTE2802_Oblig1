@@ -2,14 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using ObligEnBlog.Data;
 using ObligEnBlog.Models.Entities;
+using System.Security.Principal;
 
 namespace ObligEnBlog.Models.Repository;
 
 public class BlogRepository : IBlogRepository, IDisposable {
     private ObligEnBlogContext context;
+    private readonly UserManager<IdentityUser> _manager;
 
-    public BlogRepository(ObligEnBlogContext context) {
+    public BlogRepository(ObligEnBlogContext context, UserManager<IdentityUser> userManager) {
         this.context = context;
+        this._manager = userManager;
     }
 
     public IEnumerable<Blog> GetAllBlogs() {
@@ -20,7 +23,11 @@ public class BlogRepository : IBlogRepository, IDisposable {
         if (BlogId == null) return null;
         return context.Blog.Find(BlogId);
     }
-    public void AddBlog(Blog blog) {
+    public void AddBlog(Blog blog, IPrincipal principal) {
+        var user = _manager.FindByNameAsync(principal.Identity.Name).Result;
+        blog.Owner = user;
+        blog.OwnerId = user.Id;
+
         context.Blog.Add(blog);
     }
     public void DeleteBlog(int blogId) {
@@ -34,12 +41,14 @@ public class BlogRepository : IBlogRepository, IDisposable {
 
 
     public IEnumerable<BlogPost> GetAllBlogPosts() {
-        return context.BlogPost.ToList();
+        var blogPosts = context.BlogPost.Include(bp => bp.Owner);
+        return blogPosts.ToList();
     }
     public BlogPost? GetBlogPostById(int? blogPostId) {
         return context.BlogPost.Find(blogPostId);
     }
-    public void AddBlogPost(BlogPost blogPost) {
+    public void AddBlogPost(BlogPost blogPost, IPrincipal principal) {
+        var user = _manager.FindByNameAsync(principal.Identity.Name).Result;
         context.BlogPost.Add(blogPost);
     }
     public void DeleteBlogPost(int blogPostId) {
@@ -58,12 +67,14 @@ public class BlogRepository : IBlogRepository, IDisposable {
 
 
     public IEnumerable<Comment> GetAllComments() {
-        return context.Comment.ToList();
+        var comments = context.Comment.Include(c => c.Owner);
+        return comments.ToList();
     }
     public Comment? GetCommentById(int? commentId) {
         return context.Comment.Find(commentId);
     }
-    public void AddComment(Comment comment) {
+    public void AddComment(Comment comment, IPrincipal principal) {
+        var user = _manager.FindByNameAsync(principal.Identity.Name).Result;
         context.Comment.Add(comment);
     }
     public void DeleteComment(int commentId) {

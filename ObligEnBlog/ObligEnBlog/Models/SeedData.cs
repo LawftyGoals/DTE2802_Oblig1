@@ -10,7 +10,7 @@ namespace ObligEnBlog.Models {
             using (var context = new ObligEnBlogContext(serviceProvider.GetRequiredService<DbContextOptions<ObligEnBlogContext>>())) {
 
 
-                if (true) {
+                if (false) {
                     RemoveAll(context);
                 }
 

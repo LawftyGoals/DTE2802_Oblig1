@@ -30,6 +30,12 @@
             @Html.DisplayFor(model => model.Blog.DateCreated)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Blog.Owner.UserName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Blog.Owner.UserName)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Blog.Active)
         </dt>
         @if (Model.Blog.Active)
@@ -77,12 +83,15 @@ else
 }
 @if (Model.BlogPosts.Count() > 0)
 {
-
     <table class="table">
         <thead>
             <tr>
                 <th>
+                    <script>console.log("@Model.BlogPosts.ElementAt(0).Owner")</script>
                     @Html.DisplayNameFor(model => model.BlogPost.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BlogPost.Owner.UserName)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.BlogPost.Description)
@@ -90,7 +99,6 @@ else
                 <th>
                     @Html.DisplayNameFor(model => model.BlogPost.Content)
                 </th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -99,6 +107,9 @@ else
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Owner.UserName)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Description)

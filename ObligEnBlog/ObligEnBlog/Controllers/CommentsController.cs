@@ -56,7 +56,7 @@ namespace ObligEnBlog.Controllers {
         public async Task<IActionResult> Create([Bind("CommentId,BlogPostParentId,CommentText,OwnerId,Owner")] Comment comment) {
             var parentBlogPost = GetParentBlogPost(comment.BlogPostParentId);
             if (ModelState.IsValid) {
-                _repository.AddComment(comment);
+                _repository.AddComment(comment, User);
                 _repository.Save();
                 return RedirectToAction(nameof(Details), "BlogPosts", new { id = parentBlogPost.BlogPostId });
             }

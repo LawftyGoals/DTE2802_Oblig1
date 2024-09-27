@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ObligEnBlog.Models.Entities;
@@ -8,9 +9,14 @@ using ObligEnBlog.Models.ViewModels;
 namespace ObligEnBlog.Controllers {
     public class BlogPostsController : Controller {
         private IBlogRepository _repository;
+        private readonly IAuthorizationService _authorizationService;
 
-        public BlogPostsController(IBlogRepository blogRepository) {
+        private readonly UserManager<IdentityUser> _manager;
+
+        public BlogPostsController(IBlogRepository blogRepository, UserManager<IdentityUser> userManager, IAuthorizationService authorizationService) {
             _repository = blogRepository;
+            _authorizationService = authorizationService;
+            _manager = userManager;
         }
 
         // GET: BlogPosts
@@ -62,7 +68,7 @@ namespace ObligEnBlog.Controllers {
             var parentBlog = GetParentBlog(blogPost.BlogParentId);
 
             if (ModelState.IsValid && parentBlog != null) {
-                _repository.AddBlogPost(blogPost);
+                _repository.AddBlogPost(blogPost, User);
                 _repository.Save();
                 return RedirectToAction(nameof(Details), "Blogs", new { id = parentBlog.BlogId });
             }

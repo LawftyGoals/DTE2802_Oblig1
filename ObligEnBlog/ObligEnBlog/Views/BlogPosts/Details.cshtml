@@ -1,4 +1,5 @@
 ﻿@model BlogPostDetailsViewModel
+@using ObligEnBlog.Models.Entities;
 
 @{
     ViewData["Title"] = "Details";
@@ -62,6 +63,9 @@
         <thead>
             <tr>
                 <th>
+                    @Html.DisplayNameFor(model => model.Comment.Owner.UserName)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Comment.CommentText)
                 </th>
             </tr>
@@ -70,6 +74,7 @@
             @foreach (var item in Model.Comments)
             {
                 <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Owner.UserName)</td>
                     <td>
                         @Html.DisplayFor(modelItem => item.CommentText)
                     </td>

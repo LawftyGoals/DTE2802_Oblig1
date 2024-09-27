@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace ObligEnBlog.Models.Entities;
-public class Comment {
+public class Comment : IOwnerEntity {
     public int CommentId { get; set; }
     public int BlogPostParentId { get; set; }
     [Display(Name = "Comment")]

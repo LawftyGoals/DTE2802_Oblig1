@@ -53,7 +53,7 @@ namespace ObligEnBlog {
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("BlogId,Name,Description,DateCreated,OwnerId,Owner")] Blog blog) {
             if (ModelState.IsValid) {
-                blogRepository.AddBlog(blog);
+                blogRepository.AddBlog(blog, User);
                 blogRepository.Save();
                 return RedirectToAction(nameof(Index));
             }
