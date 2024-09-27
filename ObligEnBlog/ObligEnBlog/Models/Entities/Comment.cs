@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace ObligEnBlog.Models.Entities;
 public class Comment {
@@ -10,6 +11,8 @@ public class Comment {
     [Display(Name = "Date Created")]
     [DataType(DataType.Date)]
     public DateTime DateCreated { get; set; } = DateTime.Now;
+    public string OwnerId { get; set; }
+    public IdentityUser Owner { get; set; }
 
 
 

@@ -1,4 +1,5 @@
-﻿using ObligEnBlog.Models.Entities;
+﻿using Microsoft.AspNetCore.Identity;
+using ObligEnBlog.Models.Entities;
 
 namespace ObligEnBlog.Models.ViewModels {
     public class BlogPostDetailsViewModel {
@@ -9,6 +10,7 @@ namespace ObligEnBlog.Models.ViewModels {
         public IEnumerable<Comment>? Comments { get; set; }
 
         public Comment? Comment { get; set; }
+        public IdentityUser? User { get; set; }
 
 
     }

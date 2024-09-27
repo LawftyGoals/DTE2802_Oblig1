@@ -1,10 +1,10 @@
-﻿using ObligEnBlog.Models.Entities;
+﻿using Microsoft.AspNetCore.Identity;
+using ObligEnBlog.Models.Entities;
 
 namespace ObligEnBlog.Models.Repository;
 
 
-public interface IBlogRepository : IDisposable
-{
+public interface IBlogRepository : IDisposable {
     IEnumerable<Blog> GetAllBlogs();
     Blog? GetBlogById(int? BlogId);
     void AddBlog(Blog blog);
@@ -26,6 +26,8 @@ public interface IBlogRepository : IDisposable
     void DeleteComment(int blogPostId);
     void DeleteComments(List<Comment> comments);
     void UpdateComment(Comment comment);
+
+    IdentityUser? GetUser(string userId);
 
 
     void Save();

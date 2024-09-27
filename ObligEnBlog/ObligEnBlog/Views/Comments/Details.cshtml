@@ -27,7 +27,7 @@
     </dl>
 </div>
 <div>
-    @if (Model.Blog.Active)
+    @if (Model.Blog.Active && User.Identity is {IsAuthenticated: true})
     {
         <span><a asp-action="Edit" asp-route-id="@Model?.Comment.CommentId">Edit</a> |</span>
     }

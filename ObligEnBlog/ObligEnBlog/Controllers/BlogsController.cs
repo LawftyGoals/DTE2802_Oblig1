@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ObligEnBlog.Data;
 using ObligEnBlog.Models.Entities;
 using ObligEnBlog.Models.Repository;
 using ObligEnBlog.Models.ViewModels;
@@ -32,12 +32,16 @@ namespace ObligEnBlog {
             if (blog == null) {
                 return NotFound();
             }
-            var myView = new BlogDetailsViewModel { Blog = blog, BlogPosts = blogPosts };
+
+            var user = blogRepository.GetUser(blog.OwnerId);
+
+            var myView = new BlogDetailsViewModel { Blog = blog, BlogPosts = blogPosts, User = user };
 
             return View(myView);
         }
 
         // GET: Blogs/Create
+        [Authorize]
         public IActionResult Create() {
             return View();
         }
@@ -47,7 +51,7 @@ namespace ObligEnBlog {
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BlogId,Name,Description,DateCreated")] Blog blog) {
+        public async Task<IActionResult> Create([Bind("BlogId,Name,Description,DateCreated,OwnerId,Owner")] Blog blog) {
             if (ModelState.IsValid) {
                 blogRepository.AddBlog(blog);
                 blogRepository.Save();
@@ -57,6 +61,7 @@ namespace ObligEnBlog {
         }
 
         // GET: Blogs/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id) {
             if (id == null || blogRepository.GetAllBlogs() == null) {
                 return NotFound();
@@ -72,9 +77,10 @@ namespace ObligEnBlog {
         // POST: Blogs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BlogId,Name,Description,DateCreated,Active")] Blog blog) {
+        public async Task<IActionResult> Edit(int id, [Bind("BlogId,Name,Description,DateCreated,Active,OwnerId,Owner")] Blog blog) {
             if (id != blog.BlogId) {
                 return NotFound();
             }
@@ -100,6 +106,7 @@ namespace ObligEnBlog {
         }
 
         // GET: Blogs/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id) {
             if (id == null || blogRepository.GetAllBlogs() == null) {
                 return NotFound();
@@ -116,6 +123,7 @@ namespace ObligEnBlog {
         // POST: Blogs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id) {
             if (blogRepository.GetAllBlogs() == null) {
                 return Problem("Entity set 'ObligEnBlogContext.Blog'  is null.");
@@ -140,7 +148,7 @@ namespace ObligEnBlog {
                 }
             }
 
-             blogRepository.Save();
+            blogRepository.Save();
             return RedirectToAction(nameof(Index));
         }
 

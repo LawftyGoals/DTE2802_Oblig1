@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ObligEnBlog.Models.Entities;
 using ObligEnBlog.Models.Repository;
@@ -47,6 +48,7 @@ namespace ObligEnBlog.Controllers {
         }
 
         // GET: BlogPosts/Create
+        [Authorize]
         public IActionResult Create() {
             return View();
         }
@@ -68,6 +70,7 @@ namespace ObligEnBlog.Controllers {
         }
 
         // GET: BlogPosts/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id) {
             if (id == null || _repository.GetAllBlogPosts() == null) {
                 return NotFound();
@@ -85,7 +88,8 @@ namespace ObligEnBlog.Controllers {
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BlogPostId,Title,Description,Content")] BlogPost blogPost) {
+        [Authorize]
+        public async Task<IActionResult> Edit(int id, [Bind("BlogPostId,Title,Description,Content,OwnerId,Owner")] BlogPost blogPost) {
             if (id != blogPost.BlogPostId) {
                 return NotFound();
             }
@@ -109,6 +113,7 @@ namespace ObligEnBlog.Controllers {
         }
 
         // GET: BlogPosts/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id) {
             if (id == null || _repository.GetAllBlogPosts() == null) {
                 return NotFound();
@@ -125,6 +130,7 @@ namespace ObligEnBlog.Controllers {
         // POST: BlogPosts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id) {
             if (_repository.GetAllBlogPosts() == null) {
                 return Problem("Entity set 'ObligEnBlogContext.BlogPost'  is null.");

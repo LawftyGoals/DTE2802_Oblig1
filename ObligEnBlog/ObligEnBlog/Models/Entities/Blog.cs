@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace ObligEnBlog.Models.Entities {
     public class Blog {
@@ -11,6 +12,8 @@ namespace ObligEnBlog.Models.Entities {
         public DateTime DateCreated { get; set; } = DateTime.Now;
 
         public bool Active { get; set; } = true;
+        public string OwnerId { get; set; }
+        public IdentityUser Owner { get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ObligEnBlog.Models.Entities;
 using ObligEnBlog.Models.Repository;
@@ -42,6 +43,7 @@ namespace ObligEnBlog.Controllers {
         }
 
         // GET: Comments/Create
+        [Authorize]
         public IActionResult Create() {
             return View();
         }
@@ -51,7 +53,7 @@ namespace ObligEnBlog.Controllers {
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CommentId,BlogPostParentId,CommentText")] Comment comment) {
+        public async Task<IActionResult> Create([Bind("CommentId,BlogPostParentId,CommentText,OwnerId,Owner")] Comment comment) {
             var parentBlogPost = GetParentBlogPost(comment.BlogPostParentId);
             if (ModelState.IsValid) {
                 _repository.AddComment(comment);
@@ -62,6 +64,7 @@ namespace ObligEnBlog.Controllers {
         }
 
         // GET: Comments/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id) {
             if (id == null || _repository.GetAllComments() == null) {
                 return NotFound();
@@ -79,7 +82,8 @@ namespace ObligEnBlog.Controllers {
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CommentId,BlogPostParentId,CommentText")] Comment comment) {
+        [Authorize]
+        public async Task<IActionResult> Edit(int id, [Bind("CommentId,BlogPostParentId,CommentText,OwnerId,Owner")] Comment comment) {
             if (id != comment.CommentId) {
                 return NotFound();
             }
@@ -103,6 +107,7 @@ namespace ObligEnBlog.Controllers {
         }
 
         // GET: Comments/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id) {
             if (id == null || _repository.GetAllComments() == null) {
                 return NotFound();
@@ -117,6 +122,7 @@ namespace ObligEnBlog.Controllers {
         }
 
         // POST: Comments/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id) {

@@ -1,20 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ObligEnBlog.Models.Entities;
-using System.Reflection.Emit;
 
-namespace ObligEnBlog.Data {
-    public class ObligEnBlogContext : DbContext {
-        public ObligEnBlogContext(DbContextOptions<ObligEnBlogContext> options)
-            : base(options) {
-        }
+namespace ObligEnBlog.Data;
+public class ObligEnBlogContext : IdentityDbContext<IdentityUser> {
+    public ObligEnBlogContext(DbContextOptions<ObligEnBlogContext> options)
+        : base(options) { }
 
-        public DbSet<Blog> Blog { get; set; } = default!;
-        public DbSet<BlogPost> BlogPost { get; set; }
-        public DbSet<Comment> Comment { get; set; }
+    public DbSet<Blog> Blog { get; set; } = default!;
+    public DbSet<BlogPost> BlogPost { get; set; }
+    public DbSet<Comment> Comment { get; set; }
+    public DbSet<IdentityUser> User { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
+    protected override void OnModelCreating(ModelBuilder modelBuilder) {
+        base.OnModelCreating(modelBuilder);
+
     }
 }

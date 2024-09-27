@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using ObligEnBlog.Data;
 using ObligEnBlog.Models;
 using ObligEnBlog.Models.Repository;
@@ -10,6 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IBlogRepository, BlogRepository>();
 builder.Services.AddDbContext<ObligEnBlogContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ObligEnBlogContext")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ObligEnBlogContext>();
 
 var app = builder.Build();
 
@@ -29,11 +33,14 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication(); ;
 
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Blogs}/{action=Index}/{id?}");
+
+app.MapRazorPages();
 
 app.Run();
