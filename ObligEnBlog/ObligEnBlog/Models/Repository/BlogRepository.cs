@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ObligEnBlog.Controllers;
 using ObligEnBlog.Data;
 using ObligEnBlog.Models.Entities;
 using System.Reflection.Metadata;
@@ -14,13 +15,14 @@ public class BlogRepository : IBlogRepository, IDisposable
         this.context = context;
     }
 
-    public IEnumerable<Blog> GetBlogs()
+    public IEnumerable<Blog> GetAllBlogs()
     {
         return context.Blog.ToList();
     }
 
-    public Blog GetBlogById(int BlogId)
+    public Blog? GetBlogById(int? BlogId)
     {
+        if (BlogId == null) return null;
         return context.Blog.Find(BlogId);
     }
     public void AddBlog(Blog blog)
@@ -30,6 +32,7 @@ public class BlogRepository : IBlogRepository, IDisposable
     public void DeleteBlog(int blogId)
     {
         var blog = context.Blog.Find(blogId);
+        if (blog == null) return;
         context.Blog.Remove(blog);
     }
     public void UpdateBlog(Blog blog)
@@ -42,7 +45,7 @@ public class BlogRepository : IBlogRepository, IDisposable
     {
         return context.BlogPost.ToList();
     }
-    public BlogPost GetBlogPostById(int blogPostId)
+    public BlogPost? GetBlogPostById(int? blogPostId)
     {
         return context.BlogPost.Find(blogPostId);
     }
@@ -53,7 +56,15 @@ public class BlogRepository : IBlogRepository, IDisposable
     public void DeleteBlogPost(int blogPostId)
     {
         var blogPost = context.BlogPost.Find(blogPostId);
+        if(blogPost == null) return;
         context.BlogPost.Remove(blogPost);
+    }
+    public void DeleteBlogPosts(List<BlogPost> blogPosts)
+    {
+        if (blogPosts != null)
+        {
+            context.BlogPost.RemoveRange(blogPosts);
+        }
     }
     public void UpdateBlogPost(BlogPost blogPost)
     {
@@ -65,7 +76,7 @@ public class BlogRepository : IBlogRepository, IDisposable
     {
         return context.Comment.ToList();
     }
-    public Comment GetCommentById(int commentId)
+    public Comment? GetCommentById(int? commentId)
     {
         return context.Comment.Find(commentId);
     }
@@ -76,7 +87,15 @@ public class BlogRepository : IBlogRepository, IDisposable
     public void DeleteComment(int commentId)
     {
         var comment = context.Comment.Find(commentId);
+        if(comment == null) return;
         context.Comment.Remove(comment);
+    }
+    public void DeleteComments(List<Comment> comments)
+    {
+        if (comments != null)
+        {
+            context.Comment.RemoveRange(comments);
+        }
     }
     public void UpdateComment(Comment comment)
     {

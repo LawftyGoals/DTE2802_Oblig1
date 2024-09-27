@@ -2,34 +2,33 @@
 using Microsoft.EntityFrameworkCore;
 using ObligEnBlog.Data;
 using ObligEnBlog.Models.Entities;
+using ObligEnBlog.Models.Repository;
 using ObligEnBlog.Models.ViewModels;
 
 namespace ObligEnBlog {
     public class BlogsController : Controller {
-        private readonly ObligEnBlogContext _context;
+        private IBlogRepository blogRepository;
 
-        public BlogsController(ObligEnBlogContext context) {
-            _context = context;
+        public BlogsController(IBlogRepository repository) {
+            blogRepository = repository;
         }
 
         // GET: Blogs
         public async Task<IActionResult> Index() {
-            return _context.Blog != null ?
-                        View(await _context.Blog.ToListAsync()) :
-                        Problem("Entity set 'ObligEnBlogContext.Blog'  is null.");
+            var blogs = blogRepository.GetAllBlogs().ToList();
+            return View(blogs);
         }
 
         // GET: Blogs/Details/5
         public async Task<IActionResult> Details(int? id) {
 
-            if (id == null || _context.Blog == null) {
+            if (id == null || blogRepository.GetAllBlogs() == null) {
                 return NotFound();
             }
 
-            var blog = await _context.Blog
-                .FirstAsync(m => m.BlogId == id);
+            var blog = blogRepository.GetBlogById(id);
 
-            var blogPosts = await _context.BlogPost.Where(m => m.BlogParentId == blog.BlogId).ToListAsync();
+            var blogPosts = blogRepository.GetAllBlogPosts().Where(m => m.BlogParentId == blog.BlogId).ToList();
             if (blog == null) {
                 return NotFound();
             }
@@ -50,8 +49,8 @@ namespace ObligEnBlog {
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("BlogId,Name,Description,DateCreated")] Blog blog) {
             if (ModelState.IsValid) {
-                _context.Add(blog);
-                await _context.SaveChangesAsync();
+                blogRepository.AddBlog(blog);
+                blogRepository.Save();
                 return RedirectToAction(nameof(Index));
             }
             return View(blog);
@@ -59,11 +58,11 @@ namespace ObligEnBlog {
 
         // GET: Blogs/Edit/5
         public async Task<IActionResult> Edit(int? id) {
-            if (id == null || _context.Blog == null) {
+            if (id == null || blogRepository.GetAllBlogs() == null) {
                 return NotFound();
             }
 
-            var blog = await _context.Blog.FindAsync(id);
+            var blog = blogRepository.GetBlogById(id);
             if (blog == null) {
                 return NotFound();
             }
@@ -84,10 +83,8 @@ namespace ObligEnBlog {
 
             if (ModelState.IsValid) {
                 try {
-                    _context.Update(blog);
-                    var test = await _context.Blog.FindAsync(id);
-                    Console.WriteLine(test.Active);
-                    await _context.SaveChangesAsync();
+                    blogRepository.UpdateBlog(blog);
+                    blogRepository.Save();
                 }
                 catch (DbUpdateConcurrencyException) {
                     if (!BlogExists(blog.BlogId)) {
@@ -104,12 +101,11 @@ namespace ObligEnBlog {
 
         // GET: Blogs/Delete/5
         public async Task<IActionResult> Delete(int? id) {
-            if (id == null || _context.Blog == null) {
+            if (id == null || blogRepository.GetAllBlogs() == null) {
                 return NotFound();
             }
 
-            var blog = await _context.Blog
-                .FirstOrDefaultAsync(m => m.BlogId == id);
+            var blog = blogRepository.GetBlogById(id);
             if (blog == null) {
                 return NotFound();
             }
@@ -121,35 +117,39 @@ namespace ObligEnBlog {
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id) {
-            if (_context.Blog == null) {
+            if (blogRepository.GetAllBlogs() == null) {
                 return Problem("Entity set 'ObligEnBlogContext.Blog'  is null.");
             }
-            var blog = await _context.Blog.FindAsync(id);
+            var blog = blogRepository.GetBlogById(id);
 
             if (blog != null) {
-                var blogPosts = await _context.BlogPost.Where((bp) => bp.BlogParentId == blog.BlogId).ToListAsync();
+                var blogPosts = blogRepository.GetAllBlogPosts().Where((bp) => bp.BlogParentId == blog.BlogId).ToList();
                 var blogPostIds = blogPosts.Select(bp => bp.BlogPostId).ToList();
-                var comments = await _context.Comment.Where(c => blogPostIds.Contains(c.BlogPostParentId)).ToListAsync();
+                var comments = blogRepository.GetAllComments().Where(c => blogPostIds.Contains(c.BlogPostParentId)).ToList();
 
                 if (comments != null) {
-                    _context.Comment.RemoveRange(comments);
+                    blogRepository.DeleteComments(comments);
                 }
 
                 if (blogPosts != null) {
-                    _context.BlogPost.RemoveRange(blogPosts);
+                    blogRepository.DeleteBlogPosts(blogPosts);
                 }
 
                 if (blog != null) {
-                    _context.Blog.Remove(blog);
+                    blogRepository.DeleteBlog(id);
                 }
             }
 
-            await _context.SaveChangesAsync();
+             blogRepository.Save();
             return RedirectToAction(nameof(Index));
         }
 
         private bool BlogExists(int id) {
-            return (_context.Blog?.Any(e => e.BlogId == id)).GetValueOrDefault();
+            var blog = blogRepository.GetBlogById(id);
+
+            if (blog != null) { return true; }
+
+            return false;
         }
     }
 }

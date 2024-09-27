@@ -1,12 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ObligEnBlog.Data;
 using ObligEnBlog.Models;
+using ObligEnBlog.Models.Repository;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IBlogRepository, BlogRepository>();
 builder.Services.AddDbContext<ObligEnBlogContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ObligEnBlogContext")));
 
 var app = builder.Build();
