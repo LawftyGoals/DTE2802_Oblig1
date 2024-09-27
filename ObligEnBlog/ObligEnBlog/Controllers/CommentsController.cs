@@ -1,60 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ObligEnBlog.Data;
 using ObligEnBlog.Models.Entities;
+using ObligEnBlog.Models.Repository;
 using ObligEnBlog.Models.ViewModels;
 
-namespace ObligEnBlog.Controllers
-{
-    public class CommentsController : Controller
-    {
-        private readonly ObligEnBlogContext _context;
+namespace ObligEnBlog.Controllers {
+    public class CommentsController : Controller {
+        private IBlogRepository _repository;
 
-        public CommentsController(ObligEnBlogContext context)
-        {
-            _context = context;
+        public CommentsController(IBlogRepository blogRepository) {
+            _repository = blogRepository;
         }
 
         // GET: Comments
-        public async Task<IActionResult> Index()
-        {
-              return _context.Comment != null ? 
-                          View(await _context.Comment.ToListAsync()) :
-                          Problem("Entity set 'ObligEnBlogContext.Comment'  is null.");
+        public async Task<IActionResult> Index() {
+            var comments = _repository.GetAllComments();
+
+            return comments != null ?
+                        View(comments.ToList()) :
+                        Problem("Entity set 'ObligEnBlogContext.Comment'  is null.");
         }
 
         // GET: Comments/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null || _context.Comment == null)
-            {
+        public async Task<IActionResult> Details(int? id) {
+            if (id == null || _repository.GetAllComments() == null) {
                 return NotFound();
             }
 
-            var comment = await _context.Comment
-                .FirstOrDefaultAsync(m => m.CommentId == id);
-            if (comment == null)
-            {
+            var comment = _repository.GetCommentById(id);
+            if (comment == null) {
                 return NotFound();
             }
 
-            var blogPostParent = await GetParentBlogPost(comment.BlogPostParentId);
+            var blogPostParent = GetParentBlogPost(comment.BlogPostParentId);
 
-            var blogParent = await GetParentBlog(blogPostParent.BlogParentId);
+            var blogParent = GetParentBlog(blogPostParent.BlogParentId);
 
             var myView = new BlogPostDetailsViewModel() { Blog = blogParent, BlogPost = blogPostParent, Comment = comment };
 
-            return View(comment);
+            return View(myView);
         }
 
         // GET: Comments/Create
-        public IActionResult Create()
-        {
+        public IActionResult Create() {
             return View();
         }
 
@@ -63,29 +51,24 @@ namespace ObligEnBlog.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CommentId,BlogPostParentId,CommentText")] Comment comment)
-        {
-            var parentBlogPost = await _context.BlogPost.FirstAsync(m => m.BlogPostId == comment.BlogPostParentId);
-            if (ModelState.IsValid)
-            {
-                _context.Add(comment);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Details), "BlogPosts", new {id = parentBlogPost.BlogPostId});
+        public async Task<IActionResult> Create([Bind("CommentId,BlogPostParentId,CommentText")] Comment comment) {
+            var parentBlogPost = GetParentBlogPost(comment.BlogPostParentId);
+            if (ModelState.IsValid) {
+                _repository.AddComment(comment);
+                _repository.Save();
+                return RedirectToAction(nameof(Details), "BlogPosts", new { id = parentBlogPost.BlogPostId });
             }
             return View(comment);
         }
 
         // GET: Comments/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null || _context.Comment == null)
-            {
+        public async Task<IActionResult> Edit(int? id) {
+            if (id == null || _repository.GetAllComments() == null) {
                 return NotFound();
             }
 
-            var comment = await _context.Comment.FindAsync(id);
-            if (comment == null)
-            {
+            var comment = _repository.GetCommentById(id);
+            if (comment == null) {
                 return NotFound();
             }
             return View(comment);
@@ -96,28 +79,21 @@ namespace ObligEnBlog.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CommentId,BlogPostParentId,CommentText")] Comment comment)
-        {
-            if (id != comment.CommentId)
-            {
+        public async Task<IActionResult> Edit(int id, [Bind("CommentId,BlogPostParentId,CommentText")] Comment comment) {
+            if (id != comment.CommentId) {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(comment);
-                    await _context.SaveChangesAsync();
+            if (ModelState.IsValid) {
+                try {
+                    _repository.UpdateComment(comment);
+                    _repository.Save();
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CommentExists(comment.CommentId))
-                    {
+                catch (DbUpdateConcurrencyException) {
+                    if (!CommentExists(comment.CommentId)) {
                         return NotFound();
                     }
-                    else
-                    {
+                    else {
                         throw;
                     }
                 }
@@ -127,17 +103,13 @@ namespace ObligEnBlog.Controllers
         }
 
         // GET: Comments/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.Comment == null)
-            {
+        public async Task<IActionResult> Delete(int? id) {
+            if (id == null || _repository.GetAllComments() == null) {
                 return NotFound();
             }
 
-            var comment = await _context.Comment
-                .FirstOrDefaultAsync(m => m.CommentId == id);
-            if (comment == null)
-            {
+            var comment = _repository.GetCommentById(id);
+            if (comment == null) {
                 return NotFound();
             }
 
@@ -147,22 +119,18 @@ namespace ObligEnBlog.Controllers
         // POST: Comments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.Comment == null)
-            {
+        public async Task<IActionResult> DeleteConfirmed(int id) {
+            if (_repository.GetAllComments() == null) {
                 return Problem("Entity set 'ObligEnBlogContext.Comment'  is null.");
             }
-            var comment = await _context.Comment.FindAsync(id);
-            if (comment != null)
-            {
-                _context.Comment.Remove(comment);
+            var comment = _repository.GetCommentById(id);
+            if (comment != null) {
+                _repository.DeleteComment(comment.CommentId);
             }
-            
-            await _context.SaveChangesAsync();
 
-            if(comment != null)
-            { return RedirectToAction(nameof(Details), "BlogPosts", new { id = comment.BlogPostParentId}); }
+            _repository.Save();
+
+            if (comment != null) { return RedirectToAction(nameof(Details), "BlogPosts", new { id = comment.BlogPostParentId }); }
 
             return RedirectToAction(nameof(Details), "Blogs");
 
@@ -170,21 +138,20 @@ namespace ObligEnBlog.Controllers
 
         }
 
-        private bool CommentExists(int id)
-        {
-          return (_context.Comment?.Any(e => e.CommentId == id)).GetValueOrDefault();
+        private bool CommentExists(int id) {
+            var comment = _repository.GetCommentById(id);
+
+            return comment != null ? true : false;
         }
 
-        private async Task<Blog> GetParentBlog(int id)
-        {
-            var blog = await _context.Blog.FindAsync(id);
+        private Blog? GetParentBlog(int id) {
+            var blog = _repository.GetBlogById(id);
 
             return blog;
         }
 
-        private async Task<BlogPost> GetParentBlogPost(int id)
-        {
-            var blogPost = await _context.BlogPost.FindAsync(id);
+        private BlogPost? GetParentBlogPost(int id) {
+            var blogPost = _repository.GetBlogPostById(id);
 
             return blogPost;
         }
