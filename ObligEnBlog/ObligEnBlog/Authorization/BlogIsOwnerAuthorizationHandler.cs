@@ -32,7 +32,9 @@ namespace ObligEnBlog.Authorization {
                 return Task.CompletedTask;
             }
 
+            Console.WriteLine("testing");
             if (resource.Owner.Id == _userManager.GetUserId(context.User)) {
+
                 context.Succeed(requirement);
             }
 

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ObligEnBlog.Authorization;
 using ObligEnBlog.Models.Entities;
 using ObligEnBlog.Models.Repository;
 using ObligEnBlog.Models.ViewModels;
@@ -68,6 +69,13 @@ namespace ObligEnBlog.Controllers {
             var parentBlog = GetParentBlog(blogPost.BlogParentId);
 
             if (ModelState.IsValid && parentBlog != null) {
+
+
+                var isAuthorized = await _authorizationService.AuthorizeAsync(User, blogPost, BlogOperations.Create);
+                if (!isAuthorized.Succeeded) {
+                    return new ChallengeResult();
+                }
+
                 _repository.AddBlogPost(blogPost, User);
                 _repository.Save();
                 return RedirectToAction(nameof(Details), "Blogs", new { id = parentBlog.BlogId });
@@ -86,6 +94,15 @@ namespace ObligEnBlog.Controllers {
             if (blogPost == null) {
                 return NotFound();
             }
+
+
+            var isAuthorized = await _authorizationService.AuthorizeAsync(User, blogPost, BlogOperations.Update);
+            if (!isAuthorized.Succeeded) {
+                Console.WriteLine("Not authed");
+                return new ChallengeResult();
+            }
+
+
             return View(blogPost);
         }
 

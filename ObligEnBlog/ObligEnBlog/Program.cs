@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using ObligEnBlog.Authorization;
 using ObligEnBlog.Data;
 using ObligEnBlog.Models;
 using ObligEnBlog.Models.Repository;
@@ -9,6 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IAuthorizationHandler,
+   BlogIsOwnerAuthorizationHandler>();
 builder.Services.AddTransient<IBlogRepository, BlogRepository>();
 builder.Services.AddDbContext<ObligEnBlogContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ObligEnBlogContext")));
 
